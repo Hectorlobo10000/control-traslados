@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             ProductsTableSeeder::class,
             BoxesTableSeeder::class,
             InventoriesTableSeeder::class,
+            TransferStatesTableSeeder::class,
         ]);
     }
 }

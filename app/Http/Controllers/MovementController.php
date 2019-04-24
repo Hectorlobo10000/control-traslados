@@ -8,10 +8,10 @@ use App\Movement;
 
 class MovementController extends Controller
 {
-    public function __construct()
+    /* public function __construct()
     {
         $this->middleware('auth');
-    }
+    } */
 
     /**
      * Display a listing of the resource.
@@ -68,9 +68,10 @@ class MovementController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $movements = Movement::where('deleted_at', '=', null)->get();
+        return dd($movements);
     }
 
     /**

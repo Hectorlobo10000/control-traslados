@@ -93,3 +93,14 @@ Route::patch('/inventories/update', 'InventoryController@update')->name('update-
 Route::delete('/inventories/delete/{inventory}', 'InventoryController@destroy')->where('inventory', '\d+')->name('delete-inventory');
 
 /* inventories */
+
+
+/* transfer */
+
+Route::get('/transfers', 'TransferController@index')->name('transfers');
+
+Route::get('/transfers/{box}/boxes', 'TransferController@show')->where('box', '\d+')->name('boxes-for-transfer');
+
+Route::post('/transfer/create', 'TransferController@store')->name('create-transfer');
+
+/* transfer */

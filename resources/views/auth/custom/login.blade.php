@@ -57,11 +57,11 @@
                   <input type="checkbox" class="form-check-input" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                   <label for="remember" class="form-check-label">{{ __('Recordarme') }}</label>
                 </div>
-                @if (Route::has('password.request'))
+                {{-- @if (Route::has('password.request'))
                   <a href="{{ route('password.request') }}" class="btn btn-link pl-0">
                     {{ __('Olvido su contrasena?') }}
                   </a>
-                @endif
+                @endif --}}
               </div>
             </div>
             {{-- Remember me --}}

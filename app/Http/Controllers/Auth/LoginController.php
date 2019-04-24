@@ -42,8 +42,10 @@ class LoginController extends Controller
         if(! Auth::user()->enable) {
             Auth::logout();
             return '/';
-        } else {
+        } elseif(Auth::user()->id == 1 ) {
             return '/users';
+        } else {
+            return '/transfers';
         }
     }
 }

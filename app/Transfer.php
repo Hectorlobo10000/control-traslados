@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Transfer extends Model
 {
+    use SoftDeletes;
+
     protected $table = 'transfers';
     protected $fillable = [
         'transfer_state_id',
@@ -19,20 +22,20 @@ class Transfer extends Model
         return $this->belongsTo(\App\TransferState);
     }
 
-    public function branchOfficeSend() {
+    /* public function branchOfficeSend() {
         return $this->belongsTo(\App\BranchOfficeSend::class);
-    }
+    } */
 
     public function branchOfficeReceive() {
-        return $this->belongsTo(\App\BranchOfficeReceive::class);
+        return $this->belongsTo(\App\BranchOffice::class);
     }
 
-    public function userSend() {
+    /* public function userSend() {
         return $this->belongsTo(\App\UserSend::class);
-    }
+    } */
 
     public function userReceive() {
-        return $this->belongsTo(\App\UserReceive::class);
+        return $this->belongsTo(\App\User::class);
     }
 
     public function transferDetails() {

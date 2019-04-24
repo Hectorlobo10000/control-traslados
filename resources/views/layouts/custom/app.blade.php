@@ -53,23 +53,27 @@
             <nav class="col-5 col-sm-4 col-md-3 col-lg-2 col-xl-2 bg-light sidebar" id="sidebar-wrapper">
               <div class="sidebar-sticky">
                 <ul class="nav flex-colum">
-                  <li class="nav-item col-xl-12">
-                    <a href="{{ route('users') }}" class="nav-link">
-                      <i class="fa fa-users"></i> Usuarios
-                    </a>
-                  </li>
-                  <li class="nav-item col-xl-12">
-                    <a href="{{ route('branch-offices') }}" class="nav-link">
-                      <i class="fa fa-building"></i> Sucursales
-                    </a>
-                  </li>
+                  @if (Auth::user()->id == 1)    
+                    <li class="nav-item col-xl-12">
+                      <a href="{{ route('users') }}" class="nav-link">
+                        <i class="fa fa-users"></i> Usuarios
+                      </a>
+                    </li>
+                  @endif
+                  @if (Auth::user()->id == 1)    
+                    <li class="nav-item col-xl-12">
+                      <a href="{{ route('branch-offices') }}" class="nav-link">
+                        <i class="fa fa-building"></i> Sucursales
+                      </a>
+                    </li>
+                  @endif
                   {{-- <li class="nav-item col-xl-12">
                     <a href="{{ route('movements') }}" class="nav-link">
                       <i class="fa fa-exchange-alt"></i> Movimientos
                     </a>
                   </li> --}}
                   <li class="nav-item col-xl-12">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('transfers') }}" class="nav-link">
                       <i class="fa fa-truck-moving"></i> Traslados
                     </a>
                   </li>
@@ -88,11 +92,13 @@
                       <i class="fa fa-warehouse"></i> Inventario
                     </a>
                   </li>
-                  <li class="nav-item col-xl-12">
-                    <a href="#" class="nav-link">
-                      <i class="fa fa-file-alt"></i> Reportes
-                    </a>
-                  </li>
+                  @if (Auth::user()->id == 1)    
+                    <li class="nav-item col-xl-12">
+                      <a href="#" class="nav-link">
+                        <i class="fa fa-file-alt"></i> Reportes
+                      </a>
+                    </li>
+                  @endif
                   <li class="nav-item col-xl-12 d-block d-sm-block d-md-none d-lg-none">
                     <a href="#" class="nav-link" href="{{ route('logout') }}"
                       onclick="event.preventDefault();

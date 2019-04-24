@@ -20,6 +20,7 @@ class CreateTransfersTable extends Migration
             $table->unsignedBigInteger('branch_office_receive_id');
             $table->unsignedBigInteger('user_send_id');
             $table->unsignedBigInteger('user_receive_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
