@@ -16,7 +16,7 @@ class CreateBoxDetailsTable extends Migration
         Schema::create('box_details', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('box_id');
-            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('inventory_id');
             $table->timestamps();
         });
     }

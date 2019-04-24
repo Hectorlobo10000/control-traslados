@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('code')->unique();
             $table->string('description');
             $table->boolean('enable');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -17,6 +17,7 @@ class CreateBoxesTable extends Migration
             $table->bigIncrements('id');
             $table->string('code')->unique();
             $table->unsignedBigInteger('box_state_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

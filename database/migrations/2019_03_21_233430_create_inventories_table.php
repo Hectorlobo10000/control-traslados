@@ -19,6 +19,7 @@ class CreateInventoriesTable extends Migration
             $table->unsignedBigInteger('movement_id');
             $table->unsignedBigInteger('branch_office_id');
             $table->double('balance', 6, 2);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

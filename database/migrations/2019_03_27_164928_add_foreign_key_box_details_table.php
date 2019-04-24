@@ -15,7 +15,7 @@ class AddForeignKeyBoxDetailsTable extends Migration
     {
         schema::table('box_details', function(Blueprint $table){
             $table->foreign('box_id')->references('id')->on('boxes');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('inventory_id')->references('id')->on('inventories');
         });
     }
 

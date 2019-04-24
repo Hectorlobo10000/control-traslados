@@ -18,6 +18,7 @@ class CreateBranchOfficesTable extends Migration
             $table->string('name');
             $table->string('abbreviation');
             $table->unsignedBigInteger('address_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

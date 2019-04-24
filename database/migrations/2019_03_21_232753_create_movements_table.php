@@ -17,6 +17,7 @@ class CreateMovementsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('abbreviation');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
