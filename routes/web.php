@@ -86,4 +86,10 @@ Route::delete('/product/delete/{product}', 'ProductController@destroy')->where('
 
 Route::get('/inventories', 'InventoryController@index')->name('inventories');
 
+Route::post('/inventories/create', 'InventoryController@store')->name('create-inventory');
+
+Route::patch('/inventories/update', 'InventoryController@update')->name('update-inventory');
+
+Route::delete('/inventories/delete/{inventory}', 'InventoryController@destroy')->where('inventory', '\d+')->name('delete-inventory');
+
 /* inventories */
